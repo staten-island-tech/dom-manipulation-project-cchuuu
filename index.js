@@ -6,3 +6,9 @@ function formSubmittion() {
   });
 }
 formSubmittion();
+
+const DOMSelectors = {
+  button: document.querySelector("#button1"),
+};
+
+console.log(DOMSelectors.button);
