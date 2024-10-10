@@ -9,13 +9,15 @@ formSubmittion();
 
 const DOMSelectors = {
   button: document.getElementById("button1"),
-  container: document.getElementById("container"),
-  inputs: document.getElementById("#input"),
+  container: document.getElementById("#container"),
+  input: document.querySelector("#input"),
+  card: document.getElementById("card"),
 };
-
 function addingText() {
   DOMSelectors.button.addEventListener("click", function () {
-    DOMSelectors.container.insertAdjacentText = DOMSelectors.texts;
+    let input = DOMSelectors.input.value;
+    DOMSelectors.card.insertAdjacentHTML("beforeend", `<P> ${input} </P>`);
   });
 }
+
 addingText();
