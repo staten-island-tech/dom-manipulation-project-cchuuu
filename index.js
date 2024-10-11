@@ -5,6 +5,7 @@ const DOMSelectors = {
   image: document.getElementById("image"),
 };
 function adding() {
+  const form = document.getElementById("form");
   DOMSelectors.button.addEventListener("click", function (event) {
     let text = DOMSelectors.input.value;
     let image = DOMSelectors.image.value;
@@ -15,11 +16,16 @@ function adding() {
       "beforeend",
       `
       <div id="card">
-      <h2>${text}</h2>
-      <img src="${image}" alt="" class=" > 
+      <h2 class="centertext">${text}</h2>
+      <img src="${image}" alt="" class="image" > 
       </div>`
+    ,
+    form.addEventListener("submit", (event) => {
+      event.preventDefault()
+      form.reset()
+    }));
     );
   });
-}
+};
 
 adding();
