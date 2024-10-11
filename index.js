@@ -1,23 +1,25 @@
-function formSubmittion() {
-  let form = document.querySelector("form");
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    console.log(event.target);
-  });
-}
-formSubmittion();
-
 const DOMSelectors = {
   button: document.getElementById("button1"),
-  container: document.getElementById("#container"),
-  input: document.querySelector("#input"),
-  card: document.getElementById("card"),
+  container: document.getElementById("container"),
+  input: document.getElementById("input"),
+  image: document.getElementById("image"),
 };
-function addingText() {
-  DOMSelectors.button.addEventListener("click", function () {
-    let input = DOMSelectors.input.value;
-    DOMSelectors.card.insertAdjacentHTML("beforeend", `<P> ${input} </P>`);
+function adding() {
+  DOMSelectors.button.addEventListener("click", function (event) {
+    let text = DOMSelectors.input.value;
+    let image = DOMSelectors.image.value;
+
+    event.preventDefault();
+
+    DOMSelectors.container.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div id="card">
+      <h2>${text}</h2>
+      <img src="${image}" alt="" class=" > 
+      </div>`
+    );
   });
 }
 
-addingText();
+adding();

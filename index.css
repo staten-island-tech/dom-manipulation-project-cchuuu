@@ -11,7 +11,9 @@ form {
 }
 
 #container {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
 }
@@ -24,9 +26,16 @@ form {
     display: flex;
     margin: 32px;
     border: 2px solid black;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-
+    object-fit: contain;
 }
 
+.labels {
+    font-size: 24px;
+}
+
+.image {
+    ;
+}
