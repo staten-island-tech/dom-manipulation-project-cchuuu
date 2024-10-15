@@ -3,29 +3,34 @@ const DOMSelectors = {
   container: document.getElementById("container"),
   input: document.getElementById("input"),
   image: document.getElementById("image"),
+  form: document.querySelector("form"),
 };
-function adding() {
-  const form = document.getElementById("form");
-  DOMSelectors.button.addEventListener("click", function (event) {
-    let text = DOMSelectors.input.value;
-    let image = DOMSelectors.image.value;
 
+function clear() {
+  DOMSelectors.input.value = "";
+  DOMSelectors.image.value = "";
+}
+
+function makeAlbum() {
+  DOMSelectors.button.addEventListener("submit", function (event) {
     event.preventDefault();
+    const text = DOMSelectors.input.value;
+    const image = DOMSelectors.image.value;
+    addCard(text, image);
+  });
+}
+const Album = makeAlbum();
 
-    DOMSelectors.container.insertAdjacentHTML(
-      "beforeend",
-      `
+function addCard(text, image) {
+  DOMSelectors.container.insertAdjacentHTML(
+    "beforeend",
+    `
       <div id="card">
       <h2 class="centertext">${text}</h2>
       <img src="${image}" alt="" class="image" > 
-      </div>`
-    ,
-    form.addEventListener("submit", (event) => {
-      event.preventDefault()
-      form.reset()
-    }));
-    );
-  });
-};
+      </div>
+      `
+  );
+}
 
-adding();
+addCard(Album);
