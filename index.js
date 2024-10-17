@@ -12,25 +12,28 @@ function clear() {
 }
 
 function makeAlbum() {
-  DOMSelectors.button.addEventListener("submit", function (event) {
+  DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
-    const text = DOMSelectors.input.value;
-    const image = DOMSelectors.image.value;
-    addCard(text, image);
+    const card = {
+      text: DOMSelectors.input.value,
+      image: DOMSelectors.image.value,
+    };
+    return card;
   });
 }
 const Album = makeAlbum();
 
-function addCard(text, image) {
+function addCard(Album) {
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
     `
       <div id="card">
-      <h2 class="centertext">${text}</h2>
-      <img src="${image}" alt="" class="image" > 
+      <h3 class="centertext">${Album.text}</h3>
+      <img src="${Album.image}" alt="" class="image" > 
       </div>
       `
   );
 }
 
+makeAlbum();
 addCard(Album);

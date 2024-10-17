@@ -1,5 +1,6 @@
 .background {
-    background-color: aquamarine;
+    background: no-repeat 100% url(https://onetreeplanted.org/cdn/shop/articles/Healthy_Forest_30c85fe5-6bca-45d3-ad0b-054f94dbef76_3000x.jpg?v=1689261462);
+    background-size: fit;
 }
 
 .centertext {
@@ -8,6 +9,10 @@
 
 form {
     text-align: center;
+}
+
+h1, h2 {
+    color: white;
 }
 
 #container {
@@ -21,7 +26,7 @@ form {
 #card {
     width: 20%;
     height: 23rem;
-    background: lightblue;
+    background: greenyellow;
     border-radius: 48px;
     display: flex;
     margin: 32px;
@@ -34,6 +39,7 @@ form {
 
 .labels {
     font-size: 24px;
+    color: white;
 }
 
 .image {
