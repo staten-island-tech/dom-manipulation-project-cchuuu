@@ -1,6 +1,7 @@
 .background {
-    background: no-repeat 100% url(https://onetreeplanted.org/cdn/shop/articles/Healthy_Forest_30c85fe5-6bca-45d3-ad0b-054f94dbef76_3000x.jpg?v=1689261462);
-    background-size: fit;
+    background: no-repeat 100% url(https://i.pinimg.com/originals/29/4b/d6/294bd607a153b613491e71187d5d2604.jpg);
+    background-size: fix;
+    background-attachment: fixed;
 }
 
 .centertext {

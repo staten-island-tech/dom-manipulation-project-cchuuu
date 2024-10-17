@@ -18,22 +18,38 @@ function makeAlbum() {
       text: DOMSelectors.input.value,
       image: DOMSelectors.image.value,
     };
-    return card;
+    addCard(card.text, card.image);
+    deleteInput();
   });
 }
-const Album = makeAlbum();
 
-function addCard(Album) {
+function addCard(text, image) {
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
     `
       <div id="card">
-      <h3 class="centertext">${Album.text}</h3>
-      <img src="${Album.image}" alt="" class="image" > 
+      <h3 class="centertext">${text}</h3>
+      <img src="${image}" alt="" class="image" > 
       </div>
       `
   );
 }
 
+function deleteInput() {
+  DOMSelectors.input.value = "";
+  DOMSelectors.image.value = "";
+}
+
+function deleteCard() {
+  const removeButtons = document.querySelectorAll();
+  removeButtons.forEach((el) =>
+    el.addEventListener("click", function (event) {
+      const buttonId = event.getAttribute("");
+      const id = "card" + buttonId;
+      const card = document.getElementById(id);
+      card.remove();
+    })
+  );
+}
+
 makeAlbum();
-addCard(Album);
