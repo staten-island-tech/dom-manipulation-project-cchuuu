@@ -6,11 +6,6 @@ const DOMSelectors = {
   form: document.querySelector("form"),
 };
 
-function clear() {
-  DOMSelectors.input.value = "";
-  DOMSelectors.image.value = "";
-}
-
 function makeAlbum() {
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -18,8 +13,8 @@ function makeAlbum() {
       text: DOMSelectors.input.value,
       image: DOMSelectors.image.value,
     };
-    addCard(card.text, card.image);
-    deleteInput();
+    console.log("skib");
+    return card;
   });
 }
 
@@ -30,6 +25,7 @@ function addCard(text, image) {
       <div id="card">
       <h3 class="centertext">${text}</h3>
       <img src="${image}" alt="" class="image" > 
+      <button class= "btn" >remove</button>
       </div>
       `
   );
@@ -41,15 +37,26 @@ function deleteInput() {
 }
 
 function deleteCard() {
-  const removeButtons = document.querySelectorAll();
+  const removebtn = document.querySelectorAll(".btn");
+
+  /* const removeButtons = document.querySelectorAll();
   removeButtons.forEach((el) =>
     el.addEventListener("click", function (event) {
-      const buttonId = event.getAttribute("");
+      const buttonId = event.getAttribute("id");
       const id = "card" + buttonId;
       const card = document.getElementById(id);
       card.remove();
     })
-  );
+  ); */
 }
 
-makeAlbum();
+function runCodes() {
+  DOMSelectors.form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    addCard(DOMSelectors.input.value, DOMSelectors.image.value);
+
+    deleteInput();
+    deleteCard();
+  });
+}
+runCodes();
