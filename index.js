@@ -12,7 +12,7 @@ function addCard(text, image, description) {
     "beforeend",
     `
       <div id="card">
-      <h3 class="headers" class="centertext">${text}</h3>
+      <h3 class="headers centertext">${text}</h3>
       <img src="${image}" alt="" class="image" > 
       <p>${description}</p>
       <button class="btn">remove</button>
