@@ -37,11 +37,14 @@ function deleteCard() {
   });
 }
 
-
 function runCodes() {
   DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
-    addCard(DOMSelectors.input.value, DOMSelectors.image.value, DOMSelectors.description.value);
+    addCard(
+      DOMSelectors.input.value,
+      DOMSelectors.image.value,
+      DOMSelectors.description.value
+    );
 
     deleteInput();
     deleteCard();
