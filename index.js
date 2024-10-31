@@ -11,13 +11,13 @@ function addCard(text, image, description) {
   DOMSelectors.container.insertAdjacentHTML(
     "beforeend",
     `
-      <div id="card">
-      <h3 class="headers centertext">${text}</h3>
-      <img src="${image}" alt="" class="image" > 
-      <p>${description}</p>
-      <button class="btn">remove</button>
-      </div>
-      `
+        <div id="card">
+        <h3 class="headers centertext">${text}</h3>
+        <img src="${image}" alt="" class="image" > 
+        <p>${description}</p>
+        <button class="btn">remove</button>
+        </div>
+        `
   );
 }
 
